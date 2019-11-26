@@ -1,2 +1,2 @@
-# samba-server
-Partage de fichier en local et cota disk
+# Samba-server
+Partage de fichier en local avec cota disk
