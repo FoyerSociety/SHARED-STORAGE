@@ -11,6 +11,27 @@
 		<title>Configuration Compte Samba</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link href="{% static 'Application/public/css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+		<style>
+			.pulse-button {
+					box-shadow: 0 0 0 0 #152733;
+					cursor: pointer;
+					-webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+					-moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+					-ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+					animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+			}
+			.pulse-button:hover 
+			{
+				-webkit-animation: none;-moz-animation: none;-ms-animation: none;animation: none;
+			}
+
+			@-webkit-keyframes pulse {to {box-shadow: 0 0 0 25px rgba(232, 76, 61, 0);}}
+			@-moz-keyframes pulse {to {box-shadow: 0 0 0 25px rgba(232, 76, 61, 0);}}
+			@-ms-keyframes pulse {to {box-shadow: 0 0 0 25px rgba(232, 76, 61, 0);}}
+			@keyframes pulse {to {box-shadow: 0 0 0 25px rgba(232, 76, 61, 0);}}
+		</style>
+
 	</head>
 
 	<body name="{{csrf_token}}" class="bg-gradient-primary" >
@@ -31,7 +52,7 @@
 												<div class="form-group">
 													<input type="email" style="margin: 10px" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Entrer votre email">
 												</div>
-												<a style="color: white; background-color: #152733 !important; border: #152733;  font-size: 15px;" onclick="verifier($(this))" class="btn btn-primary btn-user btn-block">
+												<a style="color: white; background-color: #152733 !important; border: #152733;  font-size: 15px;" onclick="verifier($(this))" class="btn btn-primary btn-user btn-block  pulse-button">
 													<i class="fa fa-telegram" style="font-size: 20px;"></i> Envoyer
 												</a>
 											</form>
