@@ -114,7 +114,7 @@ function create_account(){
 
   );
 
-function(dt){
+function code_reponse(dt){
   if (dt == 0){
     alert('succes');
   }
