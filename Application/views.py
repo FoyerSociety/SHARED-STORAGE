@@ -16,7 +16,7 @@ def verifie_mail(request):
         mail = request.POST.get('mail')
 
         if not re.match(r'[a-z]{1}[a-z0-9_.]{1,}@esti.mg', mail):
-            return JsonResponse(["Un mail de l'esti est attendue", 0], safe=False)
+            return JsonResponse(["Un mail de l'esti est attendu", 0], safe=False)
 
         key = send_code(mail)
         return JsonResponse([1, key], safe=False)
