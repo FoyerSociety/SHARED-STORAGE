@@ -39,9 +39,9 @@ def send_code(mail):
         <body style="font-family: Sans;">
           <section style=" margin-left: 3%; width:70%;   box-shadow: 0 6px 8px 0 #888; padding-bottom: 1.5%;">
           <h1 style="color: #fff; margin-top: 0%; background-color: #034f62; padding:3%;"> <i class="fa fa-rss"></i> ESTI SERVEUR SAMBA </h1>
-          <h3 style=" margin-left: 2%;  color: #034f62; "> Bonjour </h3>
+          <h3 style=" margin-left: 2%;  color: #034f62; "> Bonjour ! </h3>
     
-          <p style="margin-left: 2%; color: #222"> Votre  code de confirmation : <span style="color:#e74926; font-size:18px;">{key}<span></p>
+          <p style="margin-left: 2%; color: #222"> Voici votre code de confirmation : <span style="color:#e74926; font-size:18px;">{key}<span></p>
     
           <br>
           </section>
