@@ -25,37 +25,37 @@ def verifie_mail(request):
 
 
 def send_code(mail):
-    # sys.stdin = open('pass.lock', 'r')
-    # msg = MIMEMultipart('alternative')
-    # msg['Subject'] = 'Confirmation Mail ESTI'
+    sys.stdin = open('pass.lock', 'r')
+    msg = MIMEMultipart('alternative')
+    msg['Subject'] = 'Confirmation Mail ESTI'
     key = random.randint(100000, 999999)
-    # message = MIMEText("Samba Serveur ESTI")
-    # html = MIMEText(f"""
-    #     <html>
-    #     <head>
-    #       <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    #       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    #     </head>
-    #     <body style="font-family: Sans;">
-    #       <section style=" margin-left: 3%; width:70%;   box-shadow: 0 6px 8px 0 #888; padding-bottom: 1.5%;">
-    #       <h1 style="color: #fff; margin-top: 0%; background-color: #034f62; padding:3%;"> <i class="fa fa-rss"></i> ESTI SERVEUR SAMBA </h1>
-    #       <h3 style=" margin-left: 13%;  color: #034f62; "> Bonjour </h3>
-    #
-    #       <p style="margin-left: 8%; color: #222"> Votre  code de confirmation : <span style="color:#e74926; font-size:18px;">{key}<span></p>
-    #
-    #       <br>
-    #       </section>
-    #     </body>
-    # </html>
-    #     """, 'html')
-    # msg.attach(message)
-    # msg.attach(html)
-    #
-    # server = smtplib.SMTP('smtp.gmail.com:587')
-    # server.starttls()
-    # server.login("gaetan.jonathan.bakary@esti.mg", sys.stdin.read())
-    # server.sendmail('gaetan.jonathan.bakary@esti.mg', mail, msg.as_string())
-    # server.quit()
+    message = MIMEText("Samba Serveur ESTI")
+    html = MIMEText(f"""
+        <html>
+        <head>
+          <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+          <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        </head>
+        <body style="font-family: Sans;">
+          <section style=" margin-left: 3%; width:70%;   box-shadow: 0 6px 8px 0 #888; padding-bottom: 1.5%;">
+          <h1 style="color: #fff; margin-top: 0%; background-color: #034f62; padding:3%;"> <i class="fa fa-rss"></i> ESTI SERVEUR SAMBA </h1>
+          <h3 style=" margin-left: 2%;  color: #034f62; "> Bonjour ! </h3>
+    
+          <p style="margin-left: 2%; color: #222"> Voici votre code de confirmation : <span style="color:#e74926; font-size:18px;">{key}<span></p>
+    
+          <br>
+          </section>
+        </body>
+    </html>
+        """, 'html')
+    msg.attach(message)
+    msg.attach(html)
+    
+    server = smtplib.SMTP('smtp.gmail.com:587')
+    server.starttls()
+    server.login("gaetan.jonathan.bakary@esti.mg", sys.stdin.read())
+    server.sendmail('gaetan.jonathan.bakary@esti.mg', mail, msg.as_string())
+    server.quit()
     print(key)
     return key
 

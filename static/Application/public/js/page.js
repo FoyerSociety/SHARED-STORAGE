@@ -48,9 +48,9 @@ function verifier(btn){
 
 function verifie_code(){
   $('.alert-danger').remove()
-  let code = $('#code_conf').val();
+  let code_ver = $('#code_conf').val();
 
-  if (code == key){
+  if (code_ver == key){
       let newhtml = `
       <div class="form-group">
         <input type="email" id="mail" style="marign: 10px" value="${mail.val()}" class="form-control form-control-user" aria-describedby="emailHelp" disabled=disabled placeholder="Entrer votre email">
