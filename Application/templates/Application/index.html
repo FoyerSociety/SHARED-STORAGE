@@ -9,34 +9,35 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<title>Configuration Compte Samba</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link href="{% static 'Application/public/css/sb-admin-2.min.css' %}" rel="stylesheet">
 	</head>
 
-	<body name="{{csrf_token}}" class="bg-gradient-primary">
+	<body name="{{csrf_token}}" class="bg-gradient-primary" >
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-xl-10 col-lg-12 col-md-9">
-					<div class="card o-hidden border-0 shadow-lg my-5"  style="margin-top: 12% !important;">
+					<div class="card o-hidden border-0 shadow-lg my-5"  style="margin-top: 12% !important; border-radius: 0px 3px 3px 0px;" >
 						<div class="card-body p-0">
 							<div class="row">
 								<div class="col-lg-6 d-none d-lg-block bg-password-image"></div>
 									<div class="col-lg-6">
 										<div class="p-5">
 											<div class="text-center">
-												<h1 class="h4 text-gray-900 mb-2">Serveur Stockage ESTI</h1>
+												<h1 class="h4 text-gray-900 mb-2" style="color: #152733 !important; font-weight: bold !important;  font-size: 24px;">SERVEUR STOCKAGE ESTI</h1>
 												<p class="mb-4"> <br> Configuration de compte </p>
 											</div>
 											<form id="mail_space" class="user">
 												<div class="form-group">
 													<input type="email" style="margin: 10px" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Entrer votre email">
 												</div>
-												<a style="color: white" onclick="verifier($(this))" class="btn btn-primary btn-user btn-block">
-													Envoyer
+												<a style="color: white; background-color: #152733 !important; border: #152733;  font-size: 15px;" onclick="verifier($(this))" class="btn btn-primary btn-user btn-block">
+													<i class="fa fa-telegram" style="font-size: 20px;"></i> Envoyer
 												</a>
 											</form>
 											<hr>
 											<div class="text-center">
-												<a class="small" href="#">Vous rencontrer des problèmes ?</a>
+												<a class="small" href="#" style="color: #152733; font-weight: bold;">Vous rencontrez des problèmes ?</a>
 											</div>
 										</div>
 									</div>
