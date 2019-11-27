@@ -67,7 +67,9 @@ def create_account(request):
         mail = request.POST.get('mail')
         niveau = request.POST.get('niveau')
 
-        rt = subprocess.call('')
+        rt = subprocess.call(f'Scripts/run_as_root.sh acc {username} {password} {niveau}')
+
+        return HttpResponse(rt)
 
 
     raise Http404("Pas Trouvé")
