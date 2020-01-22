@@ -1,3 +1,7 @@
+
+
+
+
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'Samba.ui'
@@ -12,7 +16,8 @@ from PyQt5 import QtWidgets
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-
+import os
+import sys
 
 
 class Ui_MainWindow(object):
@@ -73,6 +78,7 @@ class Ui_MainWindow(object):
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.label_notif = QtWidgets.QLabel(self.centralwidget)
         self.label_notif.setGeometry(QtCore.QRect(170, 370, 161, 21))
+        self.msgBox = QMessageBox(self.centralwidget)
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(False)
@@ -119,11 +125,25 @@ class Fenetre(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
         self.setupUi(parent)
-        self.pushButton.clicked.connect(self.print_hello)
+        self.pushButton.clicked.connect(self.connect_drive)
 
 
-    def print_hello(self):
-        print('hello')
+    def connect_drive(self):
+        username = self.lineEdit.text()
+        password = self.lineEdit_2.text()
+        niveau = self.lineEdit_3.text()
+
+        if sys.platform == 'win32':
+            connect = "NET USE S: \\\\192.168.72.109\\" + str(niveau) + " " + str(password) + "/user:" + str(username)
+        elif sys.platform == 'linux':
+            pass
+
+        self.msgBox.setIcon(QMessageBox.Information)
+        self.msgBox.setText('La partition S est montée')
+        self.msgBox.setWindowTitle('Operation Reussi')
+
+        self.msgBox.exec_()
+        os.system(connect)
 
 def main():
     app = QApplication(sys.argv)
